@@ -1,0 +1,67 @@
+<!--
+  ___                  _ _  __
+ / __|_ __  ___ ___ __| | |/ /___ _  _
+ \__ \ '_ \/ -_) -_) _` | ' </ -_) || |
+ |___/ .__/\___\___\__,_|_|\_\___|\_, |
+     |_|                          |__/
+-->
+<html>
+  <head>
+    <title>SpeedKey</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="jquery.textfill.min.js"></script>
+    <script src="jquery.color.js"></script>
+    <script src="node.js"></script> <!--what a terrible name-->
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <span id = "seq" style="margin:5px">seq</span><span id="key" class="center" style="margin:5px">key</span><span id="on" style="margin:5px">on</span>
+    <h1 class="center">SpeedKey</h1>
+    <h3 class="center">Race through a dichotomous key as fast as you can</h3>
+    <div id="chooser"><h1>Choose your category</h1>
+      <div id="leafs" class="choice" json="leafs.json"><div class="bigtext"><span id="leafstext">Leafs</span></div></div> <!--div structure for new key-->
+      <div id="animals" class="choice" json="animals.json"><div class="bigtext"><span>Animals</span></div></div>
+    </div>
+    <div id="game">
+      <!--Main area where game is loaded. Hidden by default-->
+      <div id="time"><span id='countdown'><!--timer text dictated by javascript--></span></div>
+      <!--Shown after timer is hidden-->
+      <div id="options">
+        <!--top box for description-->
+        <div id="desc" class="center"><span id="desctext">description here</span></div>
+        <div class="opt" id="a"><div class="corner"><span>a</span></div><div class="fill"><p class='opttext' id="atext">choice a</p></div></div>
+        <div class="opt" id="b"><div class="corner"><span>b</span></div><div class="fill"><p class='opttext' id="btext">choice b</p></div></div>
+      </div>
+      <!--where the picture is displayed-->
+      <div id="picture">
+        <img id="display" class="center">
+      </div>
+    </div>
+
+    <!--Timer and name-->
+    <div id="bottom">
+      <!--Where timer goes-->
+      <div id="timer">
+        <span id="m">0</span><span>:</span><span id="s">0.0</span>
+      </div>
+
+      <!--Shows name when you id something-->
+      <div id="name">
+        <span id="nametext"></span>
+      </div>
+    </div>
+    <!--Shows the top 3 scores-->
+    <div id="highscores">
+      <div id="floating">
+        <p class="infloat" id="urtime"></p>
+        <p class="infloat">Top 5 Scores</p>
+        <ol class="infloat" id="top">
+        </ol>
+        <div class="bottom">
+          <span class="infloat" id="home">Go Home</span><span class="infloat" id="restart" style="float:right">Replay</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
